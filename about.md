@@ -1,22 +1,23 @@
 ---
-title: About
+title: About Me
 layout: page
 ---
+
+# About Me
+
 ![Profile Image]({{ site.url }}/{{ site.picture }})
+<br />
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+Hi, I' am Sleeba Paul. I adore telling stories and building things.
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+I practice Machine Learning for love and living. Currently, I work as a Machine Learning Engineer at Refly, an AI startup  where we work on content enrichment and video analytics. I'm a Power System major, one may not find eminent similarity between my academic background and the work I do. Well, I don’t see it either :grin:
+
+But the following quote from Stanford commencement speech of Steve Jobs in 2005 is the philosophy I adapt when it comes to work. 
+
+
+> Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it. And, like any great relationship, it just gets better and better as the years roll on. So keep looking until you find it. Don't settle.
+
+I love ding.
 
 <h2>Skills</h2>
 
@@ -44,3 +45,4 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 	<li><a href="https://github.com/">Ipsum Dolor</a></li>
 	<li><a href="https://github.com/">Dolor Lorem</a></li>
 </ul>
+
