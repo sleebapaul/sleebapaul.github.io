@@ -23,7 +23,26 @@ layout: compress
     {% capture scss_sheet %}{% include style.scss %}{% endcapture %}
     {{ scss_sheet | scssify }}
     </style>
-
+    {% if page.mathjax %}
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          TeX: {
+            equationNumbers: {
+              autoNumber: "AMS"
+            }
+          },
+          tex2jax: {
+            inlineMath: [ ['$','$']],
+            displayMath: [ ['$$','$$'] ],
+            processEscapes: true,
+          },
+          displayAlign: "left",
+          displayIndent: "2em"
+        });
+      </script>
+      </script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML"></script> 
+    {% endif %}
 </head>
 <body>
 
