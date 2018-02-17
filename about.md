@@ -19,7 +19,7 @@ But, when it comes to work, I adopt the following quote from Stanford commenceme
 >Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven’t found it yet, keep looking. Don’t settle. As with all matters of the heart, you’ll know when you find it. And, like any great relationship, it just gets better and better as the years roll on. So keep looking until you find it. Don’t settle.
 
 <p style="text-align: justify">
-A car which drives autonomously thrills me. A machine talks to me like another human being intrigues my curiosity. When I learn and build intelligent machine applications, I get the feeling that I’m doing great work.
+A car which drives autonomously thrills me. A machine talks to me like another human being intrigues me. When I learn and build intelligent machine applications, I get the feeling that I’m doing great work.
 </p>
 <p style="text-align: justify">
 Next is storytelling. From Jesus to Steve Jobs, all explained abstract ideas using examples. Why?
