@@ -66,12 +66,14 @@ Now, you may get deluded a bit, thinking that these issues are due to complex ar
 
 
 >Wait, what? Reputation of backpropagation is on the line? :o
+
 >Yeah, kind of :D 
 
 Let's make a brief discussion on what actually happens in backpropagation. For that, consider the following network. 
 
 
 >It is not deep enough :/  
+
 >But helpful for explaining the concept :P 
 
 <p style="text-align: justify">
@@ -85,7 +87,9 @@ For simplicity, we are going to make some assumptions.
     - Please not this point carefully since, it is going to make a lot of easiness in our calculations.
 
 >These assumptions are odd :/  
+
 >We'll come back to a fully fledged example once we answer the question stated in section heading :)  
+
 >Okay :/
 
 <p style="text-align: justify">
@@ -175,11 +179,16 @@ If everything goes right, i.e. all gradients are calculated finitely, then we'll
 Let's imagine, if all weights are same $W$, we can consider two possible cases for the value $W$. 
 
 
->You are making a lot of assumptions. And this one is ridiculous. Rule number 1 is you shall not use same weights in a neural network :@   
+>You are making a lot of assumptions. And this one is ridiculous. Rule number 1 is you shall not use same weights in a neural network :@  
+
 >I know :)   
+
 >That symmetry will result in useless linear learners :@   
+
 >I know that too, are you done? :)   
+
 >NO ! Yeah ... yes :@   
+
 >This assumption is solely intended for getting a better understanding of the issue. Let's continue :) 
 
 
@@ -201,9 +210,12 @@ Since W is less than 1, the resulting value will be exponentially decaying. This
 ### The victims 
 
 
->Let me ask you something, How severe vanishing gradient is going to each layer? ;)  
+>Let me ask you something, How severe vanishing gradient is going to each layer? ;) 
+
 >Gradients are everywhere, so it should be the same effect, right? 
+
 >So, the middle layer and first layer are affected equally? ;)  
+
 > Explain :/
 
  
@@ -223,7 +235,7 @@ $$
 $$
 
 $$
-\frac{\partial J}{\partial W^3}\ =\ \frac{\partial}{\partial a^3}(A^3\ -\ y) * \frac{e^{-Z^2}}{(1 + e^{-Z^2})^2} *  \frac{\partial}{\partial W^3} (W^3 * W^2 * W^1 * X)
+\frac{\partial J}{\partial W^3}\ =\ \frac{\partial}{\partial A^3}(A^3\ -\ y) * \frac{e^{-Z^2}}{(1 + e^{-Z^2})^2} *  \frac{\partial}{\partial W^3} (W^3 * W^2 * W^1 * X)
 $$
 
 $$
@@ -282,7 +294,8 @@ Well I've a sad news for you. There is no complete cure for vanishing gradient y
 </p>
 
 **Initializing the weights with standard techniques like Xavier Intialization** 
-    - Initializing weights properly can reduce to some extend since the fact both too high or too low weights can result in exploding/vanishing gradients.
+
+Initializing weights properly can reduce to some extend since the fact both too high or too low weights can result in exploding/vanishing gradients.
  
 **The curse of Sigmoids and Tanhs**
 
