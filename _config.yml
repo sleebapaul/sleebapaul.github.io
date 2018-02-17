@@ -3,7 +3,7 @@ name: Sleeba Paul
 bio: Dreamer | Learner | Storyteller
 
 # twitter summary info
-description: A blog about technology and stuff related
+description: Let's tell some stories together :) 
 
 # if it's an external image, update below for true
 # better with square images
@@ -14,7 +14,7 @@ picture: /assets/images/profile.jpg
 # and specify source (external or local).
 resume: true
 resume-external: false
-resume-url: assets/resume.pdf
+resume-url: /assets/resume.pdf
 
 # url: https://koppl.in/indigo
 your url: http://sleebapaul.github.io
@@ -30,7 +30,7 @@ analytics-google: 'UA-113127259-1'
 
 # if you don't want comments in your posts, leave categories empty
 disqus:
-  shortname: https-sleebapaul-github-io # enter this from your disqus account
+  shortname: sleeba-paul # enter this from your disqus account
   categories: [blog, project] # only show disqus for posts that have these categories
 
 # if you don't have any of social below, comment the line
