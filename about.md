@@ -10,7 +10,7 @@ layout: page
 
 Hi, I'm Sleeba Paul. I adore building things and telling stories.
 <p style="text-align: justify">
-I practice Machine Learning for love and living. Currently, I work as a Machine Learning Engineer at <a target = "_blank" href="http://refly.it/">Refly</a>, an AI startup where we work on content enrichment and video analytics. I’m a Power System major; one may not find notable similarity between my academic background and the work I do. Well, I don’t see it either :D
+I practice Artificial Intelligence for love and living. Currently, I work as a Machine Learning Engineer at <a target = "_blank" href="http://refly.it/">Refly</a>, an AI startup where we work on content enrichment and video analytics. I’m a Power System major; one may not find notable similarity between my academic background and the work I do. Well, I don’t see it either :D
 </p>
 <p style="text-align: justify">
 But, when it comes to work, I adopt the following quote from Stanford commencement speech of Steve Jobs in 2005 as a philosophy.

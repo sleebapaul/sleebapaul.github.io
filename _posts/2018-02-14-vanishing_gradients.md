@@ -25,7 +25,7 @@ We all are beholding the captivating wizardry of Deep Learning in various applic
 </p>
 
 <p style="text-align: justify">
-Let's answer that question first, shall we? So, what is "Deep" is Deep Learning?  
+Let's answer that question first, shall we? So, what is "Deep" in Deep Learning?  
 </p>
 <p style="text-align: justify">
 Obviously, it is the depth of the architecture or simply put, it is the number of layers we add to a shallow network to make it deep.
