@@ -40,8 +40,7 @@ Let's call this function.
 ```
 --> Hello World!
 ```
-
-Note that `message` variable is called the `free variable` since it is accesible to the inner function, though it is not defined in `inner_func`. Now I'm going to make a little difference in the code, which is not calling the `inner_func`.
+We see that `message` is not a `global` variable accesible to all the functions defined, rather `message` is the local variable of `outer_func`. Though `message` is not defined inside `inner_func`, it is accesible to the inner function. That's why these variables are calleds `free variables`. Now I'm going to make a little difference in the code, which is not calling the `inner_func`.
 {: style="text-align: justify;"}
 
 ```python
@@ -52,6 +51,7 @@ def outer_func():
     return inner_func
 outer_func()
 ```
+
 ```
 --> <function __main__.outer_func.<locals>.inner_func>
 ```
@@ -86,12 +86,24 @@ hello_func()
 --> Hello
 ```
 
-So if you've noticed, each functions `hi_func` and `hello_func` maintained their value of `free variables` . i.e. `Hi` and `Hello` are **untouched** by the environment. All these are examples of **`Closures`** in Python. So the take away is that a `Closure` closes over the `free variables` from the environment. 
+So if you've noticed, each functions `hi_func` and `hello_func` maintained their value of `free variables` . i.e. `Hi` and `Hello` didn't mixed up. It is because of the reason that the enviroments didn't mixed up. The next obvious question is, what is an environment of a function.
 {: style="text-align: justify;"}
+
+### What is an environment? 
+
+We all know about Global and Local variable scopes. An environment of a function includes the function itself and it's possible 
+variables in its scope. Here in this setup, Python provides a facility for us to keep the variables which are extended to the scope
+of our `inner_func` along with the function. That means, the `free variable` `message` is also binded with the `inner_func` in the 
+environment of `inner_func`. This setup of binding the function, its possible variables and the `free variables` to an independent
+environment which is not interfered by other enviroments is called a **`Closure`**. So the take away is that a `Closure` closes over the `free variables` from the environment. 
+{: style="text-align: justify;"}
+
+![image-center](/assets/python_dec/closure.png){: .align-center}
 
 ## Decorators
 
 A decorator is a `mother function` that takes another `father function` as arguement, add some functionality in the `mother function`, and returns a `baby function` :D All these happens without altering the source code of the original `father function`.
+It is an application of `Closure`.
 {: style="text-align: justify;"}
 
 Let's see what hell just defined :D
