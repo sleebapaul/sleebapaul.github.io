@@ -2,8 +2,8 @@
 title: "Vanishing Gradients"
 layout: post
 date: 2018-02-16 10:56 pm
-image: /assets/vanishing_gradients/markdown.jpg
-headerImage: false
+image: /assets/images/artificial_intelligence.png
+headerImage: true
 tag:
 - tutorial
 - deeplearning
