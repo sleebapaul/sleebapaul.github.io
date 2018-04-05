@@ -79,10 +79,7 @@ The profits don't stop there. Micromasters<sup>**14**</sup>, an initiative by ed
 
 ![image-center](/assets/moocs/subj_division.png){: .align-center}
 
-Meanwhile, in the Netherlands, TU Delft ran a pilot to let their students earn credit from MOOCs offered on edX by other universities, via a Virtual Exchange program<sup>**15**</sup>. At the end of 2017, TU Delft signed an agreement with 8 other universities. Now, students from this group of universities can earn credit for MOOCs offered anywhere in the system. The universities participating in this program are: the Delft University of Technology (TU Delft), the Ecole Polytechnique Fédérale de Lausanne, Wageningen University and Research, Rice University, the University of Queensland, the Australian National University, the University of Adelaide, the Hong Kong University of Science and Technology, and Leiden University.
-{: style="text-align: justify;"}
-
-Udacity is providing a chance to earn a Developer Scholarship from Google<sup>**16**</sup>, and it is open to Indian residents who are eager to master web and mobile development skills. Again, Udacity's Nanodegrees are built with industry experts and leading technology companies from Silicon Valley like Google, Amazon, and Facebook, to ensure the student to master the skills she/he needs to meet the requirements of the industry. 
+Udacity is providing a chance to earn a Developer Scholarship from Google<sup>**15**</sup>, and it is open to Indian residents who are eager to master web and mobile development skills. Again, Udacity's Nanodegrees are built with industry experts and leading technology companies from Silicon Valley like Google, Amazon, and Facebook, to ensure the student to master the skills she/he needs to meet the requirements of the industry. 
 {: style="text-align: justify;"}
 
 Thus, these programs become a three-way arrangement between educator, student, and employer.
@@ -93,7 +90,7 @@ Thus, these programs become a three-way arrangement between educator, student, a
 A trend is mounting up in our country that people who don't have an option for employment after engineering, go to teaching in a tier-X engineering college for a temporary setup. Again, this is the aftereffect of the aforementioned skill gap. Many tier-X colleges are functioning with these temporary faculties, which is economically favorable for the management. This bias itself can tamper the quality of education. 
 {: style="text-align: justify;"}
 
-Concurrently, a significant percentage of permanent faculties in tier-X engineering institutions misuse their comfort zones. I'll give you a quick example. In tier-X colleges of India, professors have paid vacation. That is, they're actually get paid in semester breaks. But to our surprise, an MIT professor doesn't have such a privilege<sup>**17**</sup>. Now think about it, the quality difference between candidates both professors are creating?
+Concurrently, a significant percentage of permanent faculties in tier-X engineering institutions misuse their comfort zones. I'll give you a quick example. In tier-X colleges of India, professors have paid vacation. That is, they're actually get paid in semester breaks. But to our surprise, an MIT professor doesn't have such a privilege<sup>**16**</sup>. Now think about it, the quality difference between candidates both professors are creating?
 {: style="text-align: justify;"}
 
 Again, lack of research aspirations, industry collaboration, and credible personal projects among the faculties make them unfit to inspire their students. Teaching becomes an exercise with less or no intellectual effort, the art of storytelling is not even worth considering at this scene. This culture is apparently horrendous, but there is no quick fix for it. Establishing the quality of faculty would be a long-term process which requires a lot of restructuring and benchmarking. A student who does a 4-year degree, can't wait till the new dawn to happen to set up his career. 
@@ -101,7 +98,7 @@ Again, lack of research aspirations, industry collaboration, and credible person
 
 **Why great teachers matter?** 
 
-In his last lecture<sup>**18**</sup>, the famous MIT professor Walter Lewin quoted about how to learn Physics. 
+In his last lecture<sup>**17**</sup>, the famous MIT professor Walter Lewin quoted about how to learn Physics. 
 {: style="text-align: justify;"}
 {: style="text-align: justify;"}
 >You've to love it. If you don't love it, don't touch it. And if you hate it, it is because you had a very bad teacher. I make my every student ... love physics.
@@ -112,7 +109,7 @@ Lewin knows that physics is so intriguing that no one can hate it. Still, if som
 Teaching requires passionate intellectual effort and storytelling. People don't just get abstract ideas without examples. Once they don't get it, they'll miss out the fun of it. And once they lose the joy, they'll start hating it. Now imagine, say if you hate coding, how about making a living out of it after college? 
 {: style="text-align: justify;"}
 
-In MOOCs, the scene is diametrically opposite. You can learn Python from Eric Grimson<sup>**19**</sup>, the Bernard Gordon Chair of Medical Engineering at MIT. Keith Devlin<sup>**20**</sup>, Executive Director, H-STAR Institute, Stanford University, will introduce you to Introduction to Mathematical Thinking. Sebastian Thrun<sup>**21**</sup>, the founder of Google X and Google's self-driving car team, may teach you Self Driving Cars at Udacity. 
+In MOOCs, the scene is diametrically opposite. You can learn Python from Eric Grimson<sup>**18**</sup>, the Bernard Gordon Chair of Medical Engineering at MIT. Keith Devlin<sup>**19**</sup>, Executive Director, H-STAR Institute, Stanford University, will introduce you to Introduction to Mathematical Thinking. Sebastian Thrun<sup>**20**</sup>, the founder of Google X and Google's self-driving car team, may teach you Self Driving Cars at Udacity. 
 {: style="text-align: justify;"}
 
 In a click away, you're getting the world-class teaching from the pioneers in your interested field. You couldn't make it to Stanford or MIT for attending their lectures, through MOOCs they are coming to your living room for teaching you at your convenience. How cool that would be, ain't it?
@@ -120,7 +117,7 @@ In a click away, you're getting the world-class teaching from the pioneers in yo
 
 ### 3. Enforced disciplines in Engineering
 
-If we examine the history of science and engineering, it was always interdisciplinary. Micheal Faraday<sup>**22**</sup> who is famous for Electromagnetic Induction, also isolated and identified benzene. Geoffrey Hinton<sup>**23**</sup> who is known to be Godfather of Artificial Intelligence did his bachelors in experimental psychology. 
+If we examine the history of science and engineering, it was always interdisciplinary. Micheal Faraday<sup>**21**</sup> who is famous for Electromagnetic Induction, also isolated and identified benzene. Geoffrey Hinton<sup>**22**</sup> who is known to be Godfather of Artificial Intelligence did his bachelors in experimental psychology. 
 {: style="text-align: justify;"}
 
 However, between students in India, there is a misconception about **core jobs**. Say, I studied electrical engineering, I'm destined to vest my life in high power generators. This attitude is futile. You've joined an electrical course, doesn't mean that you should be working on maintenance of electric motors. You can optimize the brain imaging machinery too. That is the gracious virtue of an engineering career. 
@@ -129,15 +126,15 @@ However, between students in India, there is a misconception about **core jobs**
 When we tag ourselves as an Electrical Engineer or Mechanical Engineer, we abstain from the fact that engineering is inherently applied. A right engineer is someone who can solve a problem by **applying** his domain knowledge. Same time, to understand a problem in another field, one should have a basic grip on that discipline too. In favor of that prospect i.e. to create engineers with multi-discipline knowledge, optional subjects are added to our curriculum. However, in tier-X colleges, most of the times there won't be a faculty with domain knowledge for all optional subjects, the students are forced to learn a topic with faculty is available. 
 {: style="text-align: justify;"}
 
-MOOCs can help with this problem as well. MOOC platforms offer courses on supply chain management<sup>**24**</sup>  to neuroscience<sup>**25**</sup>; students can get acquainted with a broad spectrum of topics. This facility helps students to widen the application of their domain knowledge to multiple terrains. 
+MOOCs can help with this problem as well. MOOC platforms offer courses on supply chain management<sup>**23**</sup>  to neuroscience<sup>**24**</sup>; students can get acquainted with a broad spectrum of topics. This facility helps students to widen the application of their domain knowledge to multiple terrains. 
 {: style="text-align: justify;"}
 
 ### Closing thoughts
 
-Coming to a halt, I would add some aspects of MOOCs yet not discussed. As years gone by, MOOCs have achieved many milestones. Despite their potential to support learning and education, MOOCs have a major concern related to attrition rates and course drop out. Even though the number of learners who enroll in the courses tends to be in the thousands range, only a very small portion of the enrolled learners complete the course. According to the visualizations and analysis conducted by Katy Jordan (2015)<sup>**26**</sup>, the investigated MOOCs have a typical enrollment of 25,000, even though enrollment has reached a value up to ~230,000. Jordan reports that the average completion rate for such MOOCs is approximately 15%. Early data from Coursera suggest a completion rate of 7%–9%. Coffrin et al.<sup>**27**</sup> (2012) report the completion rates are even lower (between 3 and 5%), while they say there is a consistent and noticeable decline in the number of students who participate in the course every week. Others have also shown attrition rates similar to Coffrin. Yang et al.<sup>**28**</sup> (2013) suggest that even though there is a large proportion of students who drop out early on due to a variety of reasons, there is a significant proportion of the students who remain in the course and drop out later, thus causing attrition to happen over time.
+Coming to a halt, I would add some aspects of MOOCs yet not discussed. As years gone by, MOOCs have achieved many milestones. Despite their potential to support learning and education, MOOCs have a major concern related to attrition rates and course drop out. Even though the number of learners who enroll in the courses tends to be in the thousands range, only a very small portion of the enrolled learners complete the course. According to the visualizations and analysis conducted by Katy Jordan (2015)<sup>**25**</sup>, the investigated MOOCs have a typical enrollment of 25,000, even though enrollment has reached a value up to ~230,000. Jordan reports that the average completion rate for such MOOCs is approximately 15%. Early data from Coursera suggest a completion rate of 7%–9%. Coffrin et al.<sup>**26**</sup> (2012) report the completion rates are even lower (between 3 and 5%), while they say there is a consistent and noticeable decline in the number of students who participate in the course every week. Others have also shown attrition rates similar to Coffrin. Yang et al.<sup>**27**</sup> (2013) suggest that even though there is a large proportion of students who drop out early on due to a variety of reasons, there is a significant proportion of the students who remain in the course and drop out later, thus causing attrition to happen over time.
 {: style="text-align: justify;"}
 
-Having said that, research indicates that completion rates are not the right metric to measure the success of MOOCs. Alternate metrics<sup>**29**</sup> are proposed to measure the effectiveness of MOOCs and online learning. I personally believe that dropping out is a choice a student can always take, but before making that choice, she/he should evaluate the worth of its returns. It tests your perseverance, patience, learning capacity, adaptiveness, and aptitude, implicitly the course is helping you to understand who you truly are. And trust me, there is always room for improvement for these personal skills, else I wouldn't be completing almost 15+ MOOC certifications in last two years. 
+Having said that, research indicates that completion rates are not the right metric to measure the success of MOOCs. Alternate metrics<sup>**28**</sup> are proposed to measure the effectiveness of MOOCs and online learning. I personally believe that dropping out is a choice a student can always take, but before making that choice, she/he should evaluate the worth of its returns. It tests your perseverance, patience, learning capacity, adaptiveness, and aptitude, implicitly the course is helping you to understand who you truly are. And trust me, there is always room for improvement for these personal skills, else I wouldn't be completing almost 15+ MOOC certifications in last two years. 
 {: style="text-align: justify;"}
 
 ![image-center](/assets/moocs/stats.png){: .align-center}
@@ -181,35 +178,33 @@ So, Happy MOOCing Everyone :D
 
 14. [Micromasters at edX](https://www.edx.org/micromasters){:target="_blank"}
 
-15. [Virtual exchange program by TU Delft](http://studenten.tudelft.nl/nl/informatie/onderwijs/credits-for-moocs/){:target="_blank"}
+15. [Udacity google scholarship](https://in.udacity.com/google-india-scholarships){:target="_blank"}
 
-16. [Udacity google scholarship](https://in.udacity.com/google-india-scholarships){:target="_blank"}
+16. [Quora - MIT Professor answer to leave policy](http://qr.ae/TU8DP8){:target="_blank"}
 
-17. [Quora - MIT Professor answer to leave policy](http://qr.ae/TU8DP8){:target="_blank"}
+17. [For the love of physics - Walter Lewin last lecture](https://www.youtube.com/watch?v=4a0FbQdH3dY){:target="_blank"}
 
-18. [For the love of physics - Walter Lewin last lecture](https://www.youtube.com/watch?v=4a0FbQdH3dY){:target="_blank"}
+18. [Eric Grimson - Wiki](https://en.wikipedia.org/wiki/Eric_Grimson){:target="_blank"}
 
-19. [Eric Grimson - Wiki](https://en.wikipedia.org/wiki/Eric_Grimson){:target="_blank"}
+19. [Keith Devlin - Wiki](https://en.wikipedia.org/wiki/Keith_Devlin){:target="_blank"}
 
-20. [Keith Devlin - Wiki](https://en.wikipedia.org/wiki/Keith_Devlin){:target="_blank"}
+20. [Sebastian Thrun - Wiki](https://en.wikipedia.org/wiki/Sebastian_Thrun){:target="_blank"}
 
-21. [Sebastian Thrun - Wiki](https://en.wikipedia.org/wiki/Sebastian_Thrun){:target="_blank"}
+21. [Micheal Faraday - Wiki](https://en.wikipedia.org/wiki/Michael_Faraday){:target="_blank"}
 
-22. [Micheal Faraday - Wiki](https://en.wikipedia.org/wiki/Michael_Faraday){:target="_blank"}
+22. [Geoffrey Hinton - Wiki](https://en.wikipedia.org/wiki/Geoffrey_Hinton){:target="_blank"}
 
-23. [Geoffrey Hinton - Wiki](https://en.wikipedia.org/wiki/Geoffrey_Hinton){:target="_blank"}
+23. [Supply Chain Management - Coursera](https://www.coursera.org/specializations/supply-chain-management){:target="_blank"}
 
-24. [Supply Chain Management - Coursera](https://www.coursera.org/specializations/supply-chain-management){:target="_blank"}
+24. [Computational Neuroscience - Coursera](https://www.coursera.org/learn/computational-neuroscience){:target="_blank"}
 
-25. [Computational Neuroscience - Coursera](https://www.coursera.org/learn/computational-neuroscience){:target="_blank"}
+25. [MOOC Completion Rates: The Data - Katy Jordan](http://www.katyjordan.com/MOOCproject.html){:target="_blank"}
 
-26. [MOOC Completion Rates: The Data - Katy Jordan](http://www.katyjordan.com/MOOCproject.html){:target="_blank"}
+26. [Visualizing Patterns of Student Engagement and Performance in MOOCs - Coffrin et.al.](https://www.researchgate.net/publication/261178375_Visualizing_Patterns_of_Student_Engagement_and_Performance_in_MOOCs){:target="_blank"}
 
-27. [Visualizing Patterns of Student Engagement and Performance in MOOCs - Coffrin et.al.](https://www.researchgate.net/publication/261178375_Visualizing_Patterns_of_Student_Engagement_and_Performance_in_MOOCs){:target="_blank"}
+27. [Students’ Preferences and Views about Learning in a MOOC - Yang et.al.](https://www.sciencedirect.com/science/article/pii/S1877042814052707){:target="_blank"}
 
-28. [Students’ Preferences and Views about Learning in a MOOC - Yang et.al.](https://www.sciencedirect.com/science/article/pii/S1877042814052707){:target="_blank"}
-
-29. [EVALUATING EFFECTIVENESS OF MOOCS USING EMPIRICAL TOOLS: LEARNERS PERSPECTIVE](https://pdfs.semanticscholar.org/17b0/5acab2d18be484c180a1a3b68c1e04a01836.pdf){:target="_blank"}
+28. [EVALUATING EFFECTIVENESS OF MOOCS USING EMPIRICAL TOOLS: LEARNERS PERSPECTIVE](https://pdfs.semanticscholar.org/17b0/5acab2d18be484c180a1a3b68c1e04a01836.pdf){:target="_blank"}
 
 #### Related Readings
 
