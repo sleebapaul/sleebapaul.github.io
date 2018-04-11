@@ -13,6 +13,7 @@ author: sleebapaul
 description: About MOOCs and Indian Engineering Education
 mathjax: true
 ---
+[(This article is featured in YourStory)](https://yourstory.com/mystory/29319b1840-why-tier-x-engineering){:target="_blank"}
 
 I graduated from a tier-2 college in Kerala, India. My under-graduation alma mater was, maybe tier-3 in the state. Well, there are legit official metrics to divide these tiers, but my view is from a student's angle. In that perspective, aspects like minimum rank in entrance examinations for admission, placement history, and alumni are the primary judging factors on the selection of a college/university.
 {: style="text-align: justify;"}
