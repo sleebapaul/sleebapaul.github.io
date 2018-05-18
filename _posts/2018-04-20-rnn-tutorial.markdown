@@ -1,7 +1,7 @@
 ---
 title: "Recurrent Neural Netwoks"
 layout: post
-date: 2019-04-20 6:00 pm
+date: 2029-04-20 6:00 pm
 image: /assets/images/artificial_intelligence.png
 headerImage: true
 tag:
