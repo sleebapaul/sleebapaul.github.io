@@ -200,8 +200,6 @@ But, there are a few problems with these hand driven features.
 
 Now, what if we can simply learn the features also, from the raw data? Then we won't miss out the hidden features in data. We don't need experts too. Then learning starts from scratch, which is more close to **intelligence**. This is why the end to end learning is important. 
 
-Today let's learn and build the basic building block of Google Translate, a recurrent neural network which can build end to end solutions.
-
 # Problem definition
 
 Let's begin with ConvNets. We all know that ConvNets work so well with images. But why it is such a success? An image is a spatial distribution of pixel values/numbers. 
@@ -231,4 +229,4 @@ None of them are meaningful. The only meaningful sequence is "I" followed by "su
 
 These answers are coming out of a meaningful sequential relationship between all those words in that sentence. If we try to represent a temporal distribution as a spatial distribution, we'll lose these temporal relationships in that distribution and thereby it's meaning. At this junction, an image gets different from a sentence. Thus, we need a new architecture which can capture those sequential relationships. 
 
-In the next part of this tutorial series, let's discuss what are RNNs, how they are used for capturing the sequential relationships and how to build a language model using RNNs. 
+In the next part of this tutorial series, let's discuss what are RNNs the basic building block of Google Translate, how they are used for capturing the sequential relationships and how to build a language model using RNNs.
