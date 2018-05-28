@@ -1,0 +1,17 @@
+# Installation 
+
+brew install ruby
+
+sudo gem install bundler jekyll
+
+sudo gem install bundler
+
+bundle install
+
+# local run 
+
+bundle exec jekyll serve --config _config.yml,_config-dev.yml
+
+# Test your app
+
+bundle exec htmlproofer ./_site
