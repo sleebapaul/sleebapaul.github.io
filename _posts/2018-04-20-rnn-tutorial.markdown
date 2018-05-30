@@ -1,5 +1,5 @@
 ---
-title: "Language Modelling using Recurrent Neural Netwoks (Part-1)"
+title: "Language Modelling using Recurrent Neural Networks (Part-1)"
 layout: post
 date: 2018-05-28 2:39 pm
 image: /assets/images/artificial_intelligence.png
