@@ -20,7 +20,7 @@ The audience is expected to have basic understanding of Neural Networks, Backpro
 
 # Motivation 
 
-We've already achieved a lot of milestones in Deep Learning (DL). Still, calling it Artificial **Intelligence** is not appropriate since solving intelligence is a whole another ball game. But some leaps in DL give us hope that one day we'll solve intelligence, not necessarily with DL, but somehow we'll solve it. Such a leap is Google Translate, which supports 103 languages now and it's precise. Around 18 months ago, [Google Translate moved from good old Statistical Machine Translation(SMT) to Neural Machine Translation(NMT)](https://ai.google/research/pubs/pub45610){:target="_blank"} and the results were captivating. 
+We've already achieved a lot of milestones in Deep Learning (DL). Still, calling it Artificial **Intelligence** is not appropriate since solving intelligence is a whole another ball game. But some leaps in DL give us hope that one day we'll solve intelligence, not necessarily with DL, but somehow we'll solve it. Such a leap is Google Translate, which supports 103 languages now. Around 18 months ago, [Google Translate moved from good old Statistical Machine Translation(SMT) to Neural Machine Translation(NMT)](https://ai.google/research/pubs/pub45610){:target="_blank"} and the results were captivating. 
 
 There are two things which are remarkable about new Google Translate.
 
