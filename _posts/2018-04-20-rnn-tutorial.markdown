@@ -227,6 +227,11 @@ None of them are meaningful. The only meaningful sequence is "I" followed by "su
 1. Who is supporting LGBT rights? Me. 
 2. What I'm supporting? LGBT rights. 
 
-These answers are coming out of a meaningful sequential relationship between all those words in that sentence. If we try to represent a temporal distribution as a spatial distribution, we'll lose these temporal relationships in that distribution and thereby it's meaning. At this junction, an image gets different from a sentence. Thus, we need a new architecture which can capture those sequential relationships. 
+These answers are coming out of a meaningful sequential relationship between all those words in that sentence. If we try to represent a temporal distribution as a spatial distribution, we'll lose these temporal relationships in that distribution and thereby it's meaning. At this junction, an image gets different from a sentence. Thus, we need a new architecture which can capture those sequential relationships. Let's list a bunch of everyday sequence problems before we wrap up. 
+
+1. Time series prediction (Weather forecast, Stock prices, ...)
+2. Speech (Speech Generation and Recognition, Synthesis,  Speech to Text, ...)
+3. Music (Music Generation, Synthesis, ...)
+4. Text (Language modelling, Named Entity Recognition, Sentiment Analysis, Translation, ...)
 
 In the next part of this tutorial series, let's discuss what are RNNs the basic building block of Google Translate, how they are used for capturing the sequential relationships and how to build a language model using RNNs.
