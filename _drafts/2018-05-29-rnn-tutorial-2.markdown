@@ -20,7 +20,7 @@ The audience is expected to have the basic understanding of Neural Networks, Bac
 
 # Introduction 
 
-In the previous post we briefly discussed why CNN's are not capable of extracting sequence relationships. Fundamental reason for that failure is assumption of independence among the training and test examples. Say, if each image is a data point, then each image is considered as independent examples. Since they're independent, after a data point is processed, there is no purpose for storing state of the network. Why? 
+In the previous post we briefly discussed why CNN's are not capable of extracting sequence relationships. Fundamental reason for that failure is assumption of independence among the training examples. Say, if each image is a data point, then each image is considered as independent example. Since they're independent, after a data point is processed, there is no purpose for storing state of the network. Why? 
 
 Because you don't need that anymore. You saw the picture of a monkey, you identified it as a monkey and story is over. You don't need the monkey information to understand the **next image** of a piglet. (If you know a few things about CNNs you might have an objection here and the argument will be on parameter sharing. Parameters of CNNs are shared on spatial patterns as discussed in [previous post](https://sleebapaul.github.io/rnn-tutorial/){:target="_blank"}. CNNs can't carry temporal patterns. Later, we'll explain temporal parameter sharing of RNN in detail.)
 
@@ -113,11 +113,11 @@ Now how a word/character is represented mathematically? There are many ways to d
 
 #### One hot vectors (Sparse representation)
 
-Imagine your dictionary is `rights, human, LGBT, equality, I, support, a`. Vocabulary size is 7. Now, let $x$ be the input sentence `I support LGBT`, then representing `LGBT` in the sentence will be, 
+Imagine your dictionary is `rights, human, LGBT, equality, I, support, a`. Vocabulary size is 7. Now, let $x$ be the input sentence `I support LGBT rights`, then representing `LGBT` in the sentence will be, 
 
-$x^4\ =\ \begin{bmatrix}0 & 0 & 1 & 0 & 0 & 0  & 0\end{bmatrix}$  
+$x^3\ =\ \begin{bmatrix}0 & 0 & 1 & 0 & 0 & 0  & 0\end{bmatrix}$  
 
-What if the vocabulary size is $100000$. Then $x^4$ will be a $(1$ x $100000)$ matrix with a hell lot of zeroes. That's why it is sparse representation. As the dictionary size increases, the computational and memory cost increases. Moreover, it skips the relationship a word with other words, which is less intuitive. Read more about one-hot encoding at [here](https://hackernoon.com/what-is-one-hot-encoding-why-and-when-do-you-have-to-use-it-e3c6186d008f){:target="_blank"}.
+What if the vocabulary size is $100000$. Then $x^3$ will be a $(1$ x $100000)$ matrix with a hell lot of zeroes. That's why it is sparse representation. As the dictionary size increases, the computational and memory cost increases. Moreover, it skips the relationship a word with other words, which is less intuitive. Read more about one-hot encoding at [here](https://hackernoon.com/what-is-one-hot-encoding-why-and-when-do-you-have-to-use-it-e3c6186d008f){:target="_blank"}.
 
 #### Word embeddings (Dense representation) 
 
@@ -162,36 +162,38 @@ In this post, I'm planning a neuron level explanation after introducing an RNN c
 
 To start with, let's define the equations of an RNN cell. 
 
-**Equations**
-
-$$
-h^{[t]}\ =\ tanh(W_{hh} \cdot h^{[t-1]}\ +\ W_{xh} \cdot x^{[t]} + b_h)
-$$
+#### Equations
 
 Let's begin with $h^{[t-1]}$. This is the hidden state input from previous RNN cell to current cell (Refer the diagram above).  
+
+
+- $$
+h^{[t]}\ =\ tanh(W_{hh} \cdot h^{[t-1]}\ +\ W_{xh} \cdot x^{[t]} + b_h)
+$$
 
 A hidden state? 🤷 Why we need a state now? We never had a state vector for CNNs. Why now? 
 
 Remember we talked about maintaining context of a sentence? For this purpose, we need the information from past, right? Then $h^{[t-1]}$ is our man for that. I love to call $h^{[t-1]}$ the context vector rather than a hidden state vector since it carries the past context of the sequence.
 
-Now let me show you the beauty of RNN architecture. Along with the current input $x^{[t]}$, we give this **context vector** from past to get the future. Perfect, ain't it? 💯
+Now let me show you the beauty of RNN architecture. **Along with the current input $x^{[t]}$, we give this context vector ($h^{[t-1]}$) from past to get the future ($h^{[t]}$).** Perfect, ain't it? 💯
 
 Now have a closer look at the equation. We've two weights, $W_{hh}$ and $W_{xh}$ which is going to adjusted or say **learned** while we train these cells with examples. What these weights are going to be learned? 
 
-$W_{hh}$ will learn what needs to remembered or forget from past, that is from $h^{[t-1]}$. $W_{xh}$ learns about contribution of current input $x^{[t]}$. Together with both $W_{hh}$ and $x^{[t]}$ we will build our new context vector $h^{[t]}$ which has information from past and present. We're going to use this new context vector for two things.
+$W_{hh}$ will learn what needs to remembered or forget from past, that is from $h^{[t-1]}$. $W_{xh}$ learns about contribution of current input $x^{[t]}$. Together with both $W_{hh}$ and $W_{xh}$ we will build our new context vector $h^{[t]}$ which has information from past and present. We're going to use this new context vector for two things.
 
 Let's go to next equation for the first application. 
 
-$$
+- $$
 y^{[t]}\ =\ W_{hy} \cdot h^{[t]}\ +\ b_y
 $$
 
-We're generating an immediate output using the current context h^{[t]} where W_{hy} learns about creating an output from current context. See, this is a completely optional decision. We can create an output anytime we would like to. Based on that, we can create different models for RNNs. The model we discussing now is `Many to Many (Synced)` model. There are other models too as shown in the figure below. This picture as well as many key ideas are taken from the bible of blog posts on RNNs. [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/){:target="_blank"} by Andrej Karpathy. Love you Andrej ❤️
-
+We're generating an immediate output using the current context $h^{[t]}$ where $W_{hy}$ learns about creating an output from current context. See, this is a completely optiona. We can create an output anytime we would like to. Based on that, we can create different models for RNNs. The model we discussing now is `Many to Many (Synced)` model. There are other models too as shown in the figure below. 
 
 ![image-center](http://karpathy.github.io/assets/rnn/diags.jpeg){: .align-center}
 
-$$
+This picture as well as many key ideas are taken from the bible of blog posts on RNNs. [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/){:target="_blank"} by Andrej Karpathy. Love you Andrej ❤️
+
+- $$
 o^{[t]}\ =\ softmax(y^{[t]})
 $$
 
@@ -199,13 +201,13 @@ The third equation is not really a part of the architecture but we all know what
 
 Second application of the context vector is to pass the baton to next time step. 
 
-## Neuron Level representation 
+#### Neuron Level representation 
 
 So we've seen the insanely intuitive equations on an RNN cell. But let me unveil these cells in a neuron level so that you may understand it thoroughly. 
 
 Let's go back to equation 1. 
 
-$$
+- $$
 h^{[t]}\ =\ tanh(W_{hh} \cdot h^{[t-1]}\ +\ W_{xh} \cdot x^{[t]} + b_h)
 $$
 
@@ -224,11 +226,13 @@ You must have got the idea of second equation too. Now, let me unveil the neuron
 
 ![image-center](/assets/rnn_gospel_two/rnn_detailed_3.svg){: .align-center}
 
+Current input and past context vectors are linearly transformed and summed together. This sum is then passed to a $tanh$ to inject non-linearity. Thus current context vector is generated, which is used for generating an optional output and pass the context to next time step. As simple as that !
+
 > I think this my diagram is pretty self explanatory. 
 
-> But it is little big. 
+> But it is little big. Christopher Olah chose the simpler diagram for a reason 🤔
 
-> Agreed. Then I'll confine it to the following. 
+> Agreed. I'll confine it to the following. 
 
 ![image-center](/assets/rnn_gospel_two/rnn_block.svg){: .align-center}
 
@@ -242,3 +246,10 @@ You must have got the idea of second equation too. Now, let me unveil the neuron
 > A bit?
 
 > 😬
+
+## Parameter Sharing 
+
+## Backpropagation Through Time (BPTT)
+
+#### Vanishing Gradient Problem
+
