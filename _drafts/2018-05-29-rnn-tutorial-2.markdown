@@ -20,11 +20,11 @@ The audience is expected to have the basic understanding of Neural Networks, Bac
 
 # Introduction 
 
-In the previous post we briefly discussed why CNN's are not capable of extracting sequence relationships. Fundamental reason for that failure is assumption of independence among the training examples.  
+In the previous post we briefly discussed why CNN's are not capable of extracting sequence relationships. Fundamental reason for that failure is assumption of independence among the sequence training examples.  
 
 Say, if each image is a data point, then each image is considered as independent example, right? 
 
-But in the cases like frames from video, snippets of audio, and words pulled from sentences, this independence assumption fails. Because they have data points related in time and thus they are named as sequence problems. We need a new architecture which can capture this temporal relationship in sequence problems. 
+But in the cases like frames from video, snippets of audio, and words pulled from sentences, this independence assumption fails. Because data points related in time and thus they are named as sequence problems. We need a new architecture which can capture this temporal relationship in sequence problems. 
 
 In this post with we'll discuss Language modeling, a well-defined sequence problem and then dive deep into RNNs which can solve it. 
 
@@ -58,7 +58,7 @@ It is as simple as,
 
 As we can see, probability of each word is a conditioned on previous words, thus the context is well maintained throughout the sentence. So if we can learn these past probability distributions, then we can generate the next word accordingly.  
 
-You might be thinking now, how weird this has become, right? Conditional probabilities, an equation takes after an iguana and a lot of mathematical mess... All are set up for representing something as easy as pie for us. That's the thing about homo sapiens. We are cool in many ways 😎
+You might be thinking now, how weird this has become, don't you? Conditional probabilities, an equation takes after an iguana and a lot of mathematical mess... All are set up for representing something as easy as pie for us. That's the thing about homo sapiens. We are cool in many ways 😎
 
 We can do language modelling in two levels  
 
@@ -70,11 +70,11 @@ We can do language modelling in two levels
 
 A language model will always have a **dictionary**, which is a collection of all the tokens that will be used in that model. For example, the dictionary of a character language model of english will be the collection of 26 small letters, 26 capital letters, space and special characters of english. Dictionary size is small, still we can generate entire english vocabulary.  
 
-What about word level representation? Dictionary will contain all the words present in our training data. But we can't expect our model to generate a new word which is not in our vocabulary. Same time, word level model are less gibberish than a character model since, a word is the basic building block rather than character.
+What about word level representation? Dictionary will contain all the words present in our training data. We can't expect the model to generate a new word which is not in vocabulary. Same time, word level model are less gibberish than a character model since, a word is the basic meaningful building block of a sentence.
 
 ### Simplest language model
 
-The simplest language model is randomly picking each character from its dictionary. The below code snippet depicts the simple character level language model. You may try a word level language model by yourself.
+The simplest language modelling is randomly picking each character from its dictionary. The below code snippet depicts the simple character level language model. You may try a word level language model by yourself.
 
 <script src="https://gist.github.com/sleebapaul/fa0a29a7acd6d6f85f2e4ee9d51d1156.js"></script>
 
@@ -83,11 +83,13 @@ Generated Sentence is,
 ```W>X^Spz,wGOr(!C?uac-DqXvX_b^lv/S^p~cs)NjKWz;O+j"cZn jwZRK=I(xdD>tjgjF[BTc.mii`l<b/x#/,}(lIn\t":Ij&im```
 
 
-Though this approach is simple to implement, we fail here to maintain the context. The probablity of every character generated is the same ($\frac{1}{Dictionary\ size}$), it is not conditioned on previous inputs. Thus the generated text is gibberish. Can we do better?
+Though this approach is simple to implement, we fail to maintain the context. The probablity of every character generated is the same ($\frac{1}{Dictionary\ size}$). It is not conditioned on previous inputs. Thus the generated text is gibberish.   
+
+Can we do better?
 
 # Recurrent Neural Networks (RNNs)
 
-RNNs are entirely different from usual neural networks when it comes to architecture. If CNNs are best for spatially distributed data, RNNs are specially designed for processing sequential data. But they are not a new topic in the Deep Learning scene. In 1982, John Hopfield published a [paper](http://www.its.caltech.edu/~bi250c/papers/Hopfield-1982.pdf){:target="_blank"} in context of cognitive science and computational neuroscience which contained the idea of RNNs. From that paper to [Google Duplex](https://ai.googleblog.com/2018/05/duplex-ai-system-for-natural-conversation.html){:target="_blank"}, which can take an appointment for us by buiding a reliable conversation with a barber, we've traversed a lot in this domain.   
+RNNs are entirely different from usual neural networks when it comes to architecture. If CNNs are best for spatially distributed data, RNNs are specially designed for processing sequential data. They are not a new topic in the Deep Learning history either. In 1982, John Hopfield published a [paper](http://www.its.caltech.edu/~bi250c/papers/Hopfield-1982.pdf){:target="_blank"} in context of cognitive science and computational neuroscience which contained the idea of RNNs. From that paper to [Google Duplex](https://ai.googleblog.com/2018/05/duplex-ai-system-for-natural-conversation.html){:target="_blank"}, which can take an appointment for us by buiding a reliable conversation with a barber, we've traversed a lot in this domain.   
 
 Let's jump into the notations in order to understand the architecture of RNNs. 
 
@@ -127,7 +129,7 @@ Imagine your dictionary is [`rights, human, LGBT, equality, I, support, a`]. Voc
 
 $x^2\ =\ \begin{bmatrix}0 & 0 & 0 & 0 & 0 & 1 & 0\end{bmatrix}$  
 
-What if the vocabulary size is $100000$. Then $x^2$ will be a $(1$ x $100000)$ matrix with a $1 and a hell lot of zeroes. That's why it is sparse representation. As the dictionary size increases, the computational and memory cost of one-hot representation increases. But most importantly, it skips the relationship between words, which is less intuitive. Read more about one-hot encoding at [here](https://hackernoon.com/what-is-one-hot-encoding-why-and-when-do-you-have-to-use-it-e3c6186d008f){:target="_blank"}.
+What if the vocabulary size is $100000$. Then $x^2$ will be a $(1$ x $100000)$ matrix with a $1$ and a hell lot of zeroes. That's why it is sparse representation. As the dictionary size increases, the computational and memory cost of one-hot representation increases. But most importantly, it skips the relationship between words, which is less intuitive. Read more about one-hot encoding at [here](https://hackernoon.com/what-is-one-hot-encoding-why-and-when-do-you-have-to-use-it-e3c6186d008f){:target="_blank"}.
 
 #### Word embeddings (Dense representation) 
 
@@ -135,7 +137,9 @@ Word embeddings cover up all the pitfalls of one hot vectors. They are learned u
 
 Firstly, their representation vector size don't increment with the vocabulary size. For almost all the embedding algorithms, the vector dimensions are fixed. 
 
-For example, [GloVe: Global Vectors for Word Representation by Jeffrey Pennington, Richard Socher and Christopher D. Manning from Stanford](https://nlp.stanford.edu/projects/glove/){:target="_blank"}, converts the word "LGBT" to a 300 dimension vector. In a 300 dimension space, `LGBT` vector will be close to the 300 dimension vector of `human` to represent the relationship that LGBT community are also the part of homo sapiens. At the end of the day, the sample dense vector of `LGBT` will be, say,   
+For example, [GloVe: Global Vectors for Word Representation by Jeffrey Pennington, Richard Socher and Christopher D. Manning from Stanford](https://nlp.stanford.edu/projects/glove/){:target="_blank"}, converts the word "LGBT" to a 300 dimension vector. In a 300 dimension space, `LGBT` vector will be close to the 300 dimension vector of `human` to represent the relationship that LGBT community are also the part of homo sapiens.  
+
+At the end of the day, for example, the sample dense vector of `LGBT` will be,   
 
 $x^3$=$\begin{bmatrix}0.2218 & 0.3812 & 0.8845 & ...\end{bmatrix}$  
 
@@ -156,9 +160,11 @@ A single RNN unit recursed to itself. But, this representation has a two rudimen
 
 - It is a cyclic graph representation
 
-All the feed forward neural network graphs we've seen yet are acylic. CNNs structures we've seen are acyclic. Particularly, they are directed acyclic graphs (DAG). They start from the input nodes and reach the output nodes without loops. Why this is important?  
+All the feed forward neural network graphs we've seen yet are acylic. CNNs structures we've seen are acyclic. Particularly, they are directed acyclic graphs (DAG). They start from the input nodes and reach the output nodes without loops.   
 
-The mighty [back propagation is defined only for acyclic graphs](https://shapeofdata.wordpress.com/2016/04/27/rolling-and-unrolling-rnns/){:target="_blank"}. So we can't apply our learning algorithm in this RNN representation. Thus we've the unrolled architecture. 
+**Why this is important?**  
+
+The mighty [back propagation is defined only for acyclic graphs](https://shapeofdata.wordpress.com/2016/04/27/rolling-and-unrolling-rnns/){:target="_blank"}. So we can't apply our learning algorithm in this RNN representation. Thus we move to the unrolled architecture. 
 
 ![image-center](/assets/rnn_gospel_two/unrolled_rnns.png){: .align-center}
 
@@ -187,9 +193,11 @@ A hidden state? 🤷 Why we need a state now? We never had a state vector for CN
 
 Remember we talked about maintaining context of a sentence? For this purpose, we need the information from past. $h^{[t-1]}$ is our guy who carries the baton of past. I love to call $h^{[t-1]}$ the context vector rather than a hidden state vector since it carries the past context of the sequence.
 
-Now let me show you the beauty of RNN architecture with this equation. **Along with the current input $x^{[t]}$, we give this context vector ($h^{[t-1]}$) from past to get the future ($h^{[t]}$) of the sequence.** Perfect, ain't it? 💯
+Now let me show you the beauty of RNN architecture with this equation. **Along with the current input $x^{[t]}$, we feed context vector ($h^{[t-1]}$) from past to an RNN cell. Thus RNN cell get the future ($h^{[t]}$) of the sequence.**   
 
-Now have a closer look at the equation. We've two weights, $W_{hh}$ and $W_{xh}$ which is going to adjusted or say **learned** while we train these cells with examples. What these weights are going to learn? 
+Perfect, ain't it? 💯
+
+Now have a closer look at the equation. We've two weights, $W_{hh}$ and $W_{xh}$ which are going to adjusted or **learned** while we train these cells with examples. What these weights are going to learn? 
 
 $W_{hh}$ will learn what needs to remembered or forget from past, that is from $h^{[t-1]}$. $W_{xh}$ learns about contribution of current input $x^{[t]}$. Together with both $W_{hh}$ and $W_{xh}$ we will build our new context vector $h^{[t]}$ which has information from past and present. We're going to use this new context vector for two things.
  
@@ -199,19 +207,28 @@ Let's go to next equation for the first application.
 y^{[t]}\ =\ W_{hy} \cdot h^{[t]}\ +\ b_y
 $$
 
-We're generating an immediate output using the current context $h^{[t]}$ where $W_{hy}$ learns about creating an output from current context. See, this is a completely optional decision. We can create an output anytime we would like to. Based on that, we can create different models for RNNs. The model we discussing now is `Many to Many (Synced)` model. There are other models too. Have a look at the figure given below. 
+We're generating an immediate output $y^{[t]}$ using the current context $h^{[t]}$ where $W_{hy}$ learns about creating an output from current context. Note that, this is a completely optional decision. We can create an output $y^{[t]}$ anytime we would like to. Based on that, we can create different models for RNNs. The model we are discussing now is `(Many to Many Synced)` right most model, ideal for language modelling.  
+
+Have a look at the figure given below which depicts different architecture using RNNs. 
 
 ![image-center](http://karpathy.github.io/assets/rnn/diags.jpeg){: .align-center}
 
-This picture as well as many key ideas are taken from the bible of blog posts on RNNs. [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/){:target="_blank"} by Andrej Karpathy. Love you Andrej ❤️
+This picture as well as many key ideas are taken from the bible of blog posts on RNNs. [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/){:target="_blank"} by Andrej Karpathy ❤️
+
+One more thing which is important and to be mentioned here. In our architecture for language modelling, prediction of previous cell $y^{[t-1]}$ is passed as the input $x^{[t]}$ to next cell. Have a brief look at these variables in the above figure. Why such an implementation?  
+
+It is simply because we are dealing with continuous stream of text. Previous word is our lucidly our current input.   
+
+Again, this is not the universal way of architecture. There are variations like [teacher forcing](https://cedar.buffalo.edu/~srihari/CSE676/10.2.1%20TeacherForcing.pdf){:target="_blank"}, which don't follow this pattern.   
 
 - $$
 o^{[t]}\ =\ softmax(y^{[t]})
 $$
 
-The third equation is not really a part of the architecture but we all know what a softmax does for us. I've not talked a lot about biases too, as they are pretty understood too. 
+The third equation is not really a part of the architecture. The `softmax` layer will convert the output of RNN into a probability distribution. In language modelling, this is will be a distribution with population of dictionary size. An ideal network will predict the maximum probability for that word or character which is most likely to come next, considering the past context.  
 
-Second application of the context vector is to pass the baton to next time step.
+Second application of the context vector is to pass the baton to next time step.   
+
 
 > Wait, what is F?     
 
@@ -225,7 +242,7 @@ Second application of the context vector is to pass the baton to next time step.
 
 We've seen the insanely intuitive equations on an RNN cell. But let me unveil these cells in a neuron level so that you may understand it thoroughly. 
 
-Let's go back to equation 1. 
+Let's go back to equation 1. Consider non-linearity $F$ as `tanh`. 
 
 - $$
 h^{[t]}\ =\ tanh(W_{hh} \cdot h^{[t-1]}\ +\ W_{xh} \cdot x^{[t]} + b_h)
@@ -246,13 +263,14 @@ Now, you must have got the idea of second equation too. On that node, let me unv
 
 ![image-center](/assets/rnn_gospel_two/rnn_detailed_3.svg){: .align-center}
 
-Current input and past context vector are linearly transformed and summed together. This sum is then passed to a $tanh$ to inject non-linearity/activation. Thus current context vector is generated, which is used for generating an optional output and pass the context to next time step. As simple as that !
+Current input and past context vector are linearly transformed and summed together. This sum is then passed to a $tanh$ to inject non-linearity/activation. Thus current context vector is generated, which is used for generating an optional output and pass the context to next time step. As simple as that ! (I didn't add a bias member explictly, but you got the idea anyway 😊)
 
 > I think this my diagram is pretty self explanatory. 
 
 > But it is little big. Christopher Olah chose the simpler diagram for a reason 🤔
 
-> Agreed. I'll confine it to the following. 
+> Agreed. I'll confine it to the following.   
+
 
 ![image-center](/assets/rnn_gospel_two/rnn_block.svg){: .align-center}
 
@@ -269,11 +287,13 @@ x
 
 __Note__ 
 
-People have confusion when the hyper parameter `hidden size` and `sequence length` of RNNs are discussed. Now from the neuron level diagram, we can clearly understand that, `hidden size` is number of neurons present in the hidden layer. Here it is three.   
+[People always have confusion](https://www.quora.com/What-is-a-sequence-length-of-the-RNN-If-I-use-a-sequence-length-of-1-is-that-a-problem-What-does-it-means){:target="_blank"} when the hyper parameter `hidden size` and `sequence length` of RNNs are discussed. Now from the neuron level diagram, we can clearly understand that, `hidden size` is number of neurons present in the hidden layer. Here it is three.   
 
-`output size` can be sometimes referred as the `hidden size` as RNN has two outputs i.e. $y$ and $h^{[t]}$. As $y$ is optional, sometimes we treat $h$ as output. For good models, provided we've enough data(say, 100 million characters) we can afford to use a large `hidden size`. For small data samples (< 10 million characters) use small `hidden size` values.  
+`output size` can be sometimes referred as the `hidden size` as RNN has two outputs i.e. $y$ and $h^{[t]}$. As $y$ is optional, sometimes we treat $h$ as output.  
 
-`sequence length` is the **number of RNN cells** unrolled/considered at once or simply the number of time steps. 
+For good models, provided we've enough data(say, 100 million characters) we can afford to use a large `hidden size`. For small data samples (< 10 million characters) use small `hidden size` values.  
+
+`sequence length` is the **number of RNN cells** unrolled/considered at once or simply it is the number of time steps. 
 
 Now we'll discuss two most important concepts of RNNs and wrap up the talk and jump to code since,
 
@@ -285,24 +305,110 @@ Let's talk about the parameter sharing of Neural Networks in general and underst
 
 There is no parameter sharing in normal feed-forward networks. Every layer has a bunch of individual weights and biases and there are learned/updated on backpropagation.    
 
-But when it comes to CNNs, we dramatically reduce the number of parameters using filters. Number of parameters are defined from size and depth of filter. These parameters are used for representing patterns. Thus, for representing different patterns, these parameters can be reused or say `shared`. Sharing helps to reduce the numbers parameters. Same idea is used in RNNs too, but in a slightly different way.  
+But when it comes to CNNs, we dramatically reduce the number of parameters using filters. Number of parameters are defined from size and depth of filter. Combination of these parameters are used for representing all the patterns. Thus we can say that, these parameters are reused or say `shared` to represent different patterns. Sharing helps to reduce the numbers parameters. Same idea is used in RNNs too, but in a slightly different way.  
 
-CNNs share parameters for representing spatial features. RNNs does it through time for imbibing temporal features. The same weights are updated all time steps. 
+CNNs share parameters for representing spatial features. RNNs does it through time for imbibing temporal features. This is implemented by updating same weights on every time steps. 
 
 > What does that mean? 🤔   
 
-> Let me explain 😊
+> Let me explain the training of RNNs 😊
 
-First of all, don't confuse cells with layers. Don't confuse time steps with layers. Multiple layer RNNs look something like this. 
+### Training of RNNs
+
+First of all, number of cells and number of timesteps are the same. As we mentioned above, unrolling is for converting a cyclic representation to acyclic one. Don't confuse them layers. Multiple layer RNNs look something like this. 
 
 ![image-center](/assets/rnn_gospel_two/rnn_layers.png){: .align-center}
 
-The weights $W_{hh}$ , $W_{hx}$ and $W_{hy}$ are updated at every time steps in a single layer. Since we update the weights in this manner, 
+Now, for example in a layer we've 3 unrolled RNN cells, i.e 3 time steps.   
+
+![image-center](/assets/rnn_gospel_two/language_model_rnn.svg){: .align-center}
+
+In the first cell, we feed our context vector $h^0$ and current input word $x^0$. Initial context vector $h^0$ is will be a zero vector as we don't have any context from the past yet. Though we've three cells unrolled, all of them don't have individual weights. Instead, they share the same weights $W_{hh}$ and $W_{hx}$. 
+
+> Okay. So there are three cells but there are only a single set of weights 🤔 
+
+> Yes. That's right.   
+
+> But how it is implemented?  
+
+In this particular case of language modelling, we need to predict the next word/character at each time step as shown in the figure. That means, we need to update the weights at each cell. Implementing the idea of parameter sharing here means we update the same weights at every cell during backpropagation. Here, during a backpropagation, there will be three updates to weights.  
 
 
-## Backpropagation Through Time (BPTT)
+Okay, we understood the idea of parameter sharing. Why it is important?  Yes, indeed it will reduce the parameters, but more than that, there is another bonus for a sequence problem. 
+
+Imagine the following sentences. 
+
+1. `Kids are lovely.`
+2. `Kids of Jessie are lovely.`
+
+Here, `kids` is plural and should be followed by plural verb like `were`. Note that, the position of `kids` or 'were` doesn't matter for such a relationship. If we train a feed-forward network for learning this relationship, we would need parameters to be learned at every positions of the input sentence. In that case, every relationship should be learned at every position. Thus it is not practical. While we share parameters across the parts of the sentence, it becomes position independent and generalized. 
+
+## Backpropagation Through Time (BPTT)  
+
+Training RNNs is not a piece of cake. The villain is the very concept of using RNNs. Dependency of past inputs. To elaborate on this problem, first we define the loss of our problem.   
+
+As I mentioned above, we predict at each every cell. This prediction is compared with original label. A loss is created here. Usual stuff, isn't it? But this story is for a time step. What if we've such `t` steps?  Let's take 3 time steps as above.
+
+$$Loss,\ L\ =\ L_{1}\ +\ L_{2}\ +\ L_{3}$$
+
+The worry begins here. In RNNs, since the parameters are shared, if we need to find a gradient at a time step, then we need to sum up all the gradients from all past time steps. Let me show you this using equations. 
+
+Let's bring back equations of RNN cells. For simplicity I'm naming $W_{hh}$ as $W$, $W_{xh}$ as $V$ and $W_{xy}$ as $U$.
+
+- $$
+h^{[t]}\ =\ F(W \cdot h^{[t-1]}\ +\ V \cdot x^{[t]} + b_h)
+$$  
 
 
+- $$
+y^{[t]}\ =\ U \cdot h^{[t]}\ +\ b_y
+$$
+
+Here we need to calculate six gradients of loss with respect to learnable parameters. They are, 
+
+$\frac{\partial L}{\partial U}$,  $\frac{\partial L}{\partial V}$, $\frac{\partial L}{\partial W}$, $\frac{\partial L}{\partial b_x}$ and $\frac{\partial L}{\partial b_h}$.
+
+Consider the $\frac{\partial L}{\partial U}$ first. Let number of time steps be $T$. 
+
+$$\frac{\partial L}{\partial U}\ = \sum_{t=1}^{T} \frac{\partial L_t}{\partial U}$$  
+
+By chain rule, 
+
+$$\frac{\partial L_t}{\partial U}\ =\ \frac{\partial L_t}{\partial y^{[t]}}\ *\ \frac{\partial y^{[t]}}{\partial U}$$
+
+$\frac{\partial y^{[t]}}{\partial U}$ can be easily found out using our second equation. We're good since there is only one dependency for $U$ in it. This is for a single layer. You may need to traverse through layers if multiple layers are involved 😊 
+
+Now, let's calculate $\frac{\partial L}{\partial W}$. 
+
+$$\frac{\partial L}{\partial W}\ =\ \sum_{t=1}^{T} \frac{\partial L_t}{\partial W}$$  
+
+Using chain rule,  
+
+$$\frac{\partial L_t}{\partial W}\ =\ \frac{\partial L_t}{\partial y^{[t]}}\ *\ \frac{\partial y^{[t]}}{\partial h^{[t]}}\ *\ \frac{\partial h^{[t]}}{\partial W}$$ 
+
+Easy? Nope. This interpretation is wrong. Because not just $h^{[t]}$, but the whole $h^{[t]}$, $h^{[t-1]}$, ... $h^{[0]}$ depends on $W$. Sp gradients can't be calculated using just chain rule, we need to go for a total derivative.  A big thanks to parameter sharing 😏   
+
+So what is the right equation?   
+
+
+$$\frac{\partial L_t}{\partial W}\ =\ \frac{\partial L_t}{\partial y^{[t]}}\ *\ \frac{\partial y^{[t]}}{\partial h^{[t]}}\ *\ \sum_{k=0}^{t}\Bigg(\prod_{i=k+1}^{t} \frac{\partial h^{[i]}}{\partial h^{[i-1]}}\Bigg)\ *\ \frac{\partial h^{[k]}}{\partial W}$$
+
+Same goes for bias $b_h$  
+
+$$\frac{\partial L_t}{\partial b_h}\ =\ \frac{\partial L_t}{\partial y^{[t]}}\ *\ \frac{\partial y^{[t]}}{\partial h^{[t]}}\ *\ \sum_{k=0}^{t}\Bigg(\prod_{i=k+1}^{t} \frac{\partial h^{[i]}}{\partial h^{[i-1]}}\Bigg)\ *\ \frac{\partial h^{[k]}}{\partial b_h}$$
+
+
+> That's the meanest thing I've seen in 2018 🤦‍
+
+> 😂
+
+
+$\frac{\partial L}{\partial V}$ and $\frac{\partial L}{\partial b_x}$ will be having similar equations. 
+
+
+Yes these equations seems complex. But we can intrepret them really well to get the intuition.  
+
+- Normally, for training an neural network, we need to back propagate through just layers. To train RNN, we need to back propagate through not just layers but time steps as well.  
 
 #### Vanishing Gradient Problem
 
