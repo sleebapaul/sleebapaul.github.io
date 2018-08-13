@@ -57,7 +57,7 @@ It is as simple as,
 As we can see, the probability of each word is conditioned on previous words, thus the context is well maintained throughout the sentence. So if we can learn these past probability distributions, then we can generate the next word accordingly.  
 
 
-> This has become so weird. That equation takes after an iguan a 😑  
+> This has become so weird. That equation takes after an iguana 😑  
 
 > Really? 😆  
 
@@ -345,7 +345,7 @@ Imagine the following sentences.
 1. `Kids are lovely.`
 2. `Kids of Jessie are lovely.`
 
-Here, `kids` is plural and should be followed by a plural verb like `were`. Note that, the position of `kids` or `were` doesn't matter for such a relationship. If we train a feed-forward network for learning this relationship, we would need parameters to be learned at every position of the input sentence. In that case, every relationship should be learned at every position. It is not practical. While we share parameters across the parts of the sentence, it becomes position independent and generalizes the relationships well. 
+Here, `kids` is plural and should be followed by a plural verb like `were`. Note that, the position of `kids` or `were` doesn't matter for such a relationship. If we train a feed-forward network for learning this relationship, we would need parameters to be learned at every position of the input sentence. In that case, every relationship should be learned at every position. It is not practical. While we share parameters across the parts of the sentence, it becomes position and length agnostic, therby generalizes the relationships well. 
 
 ## Backpropagation Through Time (BPTT)  
 
