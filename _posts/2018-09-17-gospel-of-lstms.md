@@ -18,7 +18,7 @@ externalLink: false
 ---
 
 I was sunkissed by Recurrent Neural Networks (RNNs) once I had joined
-[Perleybrook Labs](http://perleybrook.com/) in mid of 2017. We were working on
+[Perleybrook Labs](http://perleybrook.com/){:target="_blank"} in mid of 2017. We were working on
 an ambitious sequence to sequence modeling task at that point in time. I must
 say, the knowledge curve was steep. MOOCs, blogs, tutorials… you name it, I’ve
 done it to keep up the pace. I bumped into a lot of GitHub repos, learned
@@ -34,8 +34,8 @@ task. I’ve written two decent tutorials on Language Modelling and RNNs in
 general, which are the subsidiaries of the trauma and anxiety I endured during
 this time period. If you’re not allergic to partial differential equations,
 optimization techniques, and Python, then Merry Christmas at
-[here](https://sleebapaul.github.io/rnn-tutorial/) and
-[here](https://sleebapaul.github.io/rnn-tutorial-2/). Have a look and bounce
+[here](https://sleebapaul.github.io/rnn-tutorial/){:target="_blank"} and
+[here](https://sleebapaul.github.io/rnn-tutorial-2/){:target="_blank"}. Have a look and bounce
 back.
 
 Others may stay here with me here since I’m not going to write anything geeky in
@@ -135,14 +135,14 @@ mention of the post-resurrection appearance of Christ to women on Easter
 morning.
 1.  Mark treated Jesus as a “Marvel” superhero and kept the focus on his heroic
 deeds as an exorcist, a healer, and a miracle worker. He added the activities of
-[healing deaf and dumb](https://bible.org/seriespage/healing-deaf-and-dumb-man),
+[healing deaf and dumb](https://bible.org/seriespage/healing-deaf-and-dumb-man){:target="_blank"},
 [the blind man at
-Bethsaida](https://en.wikipedia.org/wiki/Blind_man_of_Bethsaida) which are
+Bethsaida](https://en.wikipedia.org/wiki/Blind_man_of_Bethsaida){:target="_blank"} which are
 unaccounted in other gospels. Same time, he chucked the virgin birth of Jesus
 and there is no mention of Joseph, husband of Holy Mary.
 1.  Bizarre writing patterns. Eg. [the use of the word `immediately` is not less
 than 40 in the entire Gospel and 12 times in a
-chapter.](https://hermeneutics.stackexchange.com/questions/19821/why-does-mark-use-immediately-so-often/19823)
+chapter.](https://hermeneutics.stackexchange.com/questions/19821/why-does-mark-use-immediately-so-often/19823){:target="_blank"}
 
 Now the whole point is, Mark was different. See the validation and training loss
 plot against epochs with the same hyperparameters.
