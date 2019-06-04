@@ -8,8 +8,8 @@ layout: page
 
 
 Sleeba Paul is a Power System graduate and published researcher who loves intelligent
-machines. He currently works as a Machine Learning Engineer at [Refly](https://refly.it/){:target="_blank"}; an AI startup in
-India where he works on content enhancement and video analytics.
+machines. He currently works as a Machine Learning Engineer at [Perleybrook Labs](http://perleybrook.com/){:target="_blank"}; an AI startup in
+India where he works on video analytics.
 
 
 Sleeba has research interests in computational neuroscience and artificial general
