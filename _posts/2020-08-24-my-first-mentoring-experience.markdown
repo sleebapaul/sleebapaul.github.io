@@ -91,7 +91,7 @@ Don't let your ego affect the success of the project. As a mentor, your priority
 
 ### Be empathetic and patient
 
-As a mentor, you'll be more exposed to the technology stack and best practices than your mentees. But people forget this fact at times.  Your mentees don't have the expertise you've. If they do, they won't be needing you as a mentor. Always keep this in mind. 
+As a mentor, you are the one who is more exposed to the technology stack and best practices than your mentees. But people forget this fact at times.  Your mentees don't have the expertise you've. If they do, they won't be needing you as a mentor. Always keep this in mind. 
 
 Expect mistakes from the team. Things that look stupid for you may not be alarming for them. So, when they make mistakes, be empathetic. Help them correct it iteratively. But never allow the same mistake to happen twice. 
 
@@ -111,7 +111,7 @@ This is the best thing you can do as a mentor. Roll up your sleeves and set a ba
 
 3. Implicitly, you will help the mentees to understand why you've chosen such an architecture and how it is going to help them while doing the project. On the next project, they are more likely to apply these best practices and infrastructure as they've already tasted the fruit of it. 
 
-For this project, we had to do error analysis, try different datasets, do hyperparameter tuning,  and explore different network architectures. So I've set them a template that contains modules that can be easily reused for various experiments. I've convinced the team about the plug and play feature of these modules and encouraged them to write code in a modular manner with minimum external dependencies and coupling. It helped to do faster experiments without breaking anything else. Now they are more likely to reuse that design paradigm in their future projects since they already know why such an approach was taken. 
+For this project, we had to do error analysis, try different datasets, do hyperparameter tuning,  and explore different network architectures. So I've set them a template that contains modules that can be easily reused for various experiments. I've convinced the team about the plug and play feature of these modules and encouraged them to write code in a modular manner with minimum external dependencies and coupling. It helped them to do faster experiments without breaking anything else. Now they are more likely to reuse that design paradigm in their future projects since they already know why such an approach was taken. 
 
 Furthermore, I've introduced them to version control, better coding practices, and documentation tricks. Once the project got over, they were familiarised with a lot of topics other than Deep Learning.
 
@@ -119,9 +119,9 @@ Furthermore, I've introduced them to version control, better coding practices, a
 
 People love getting an acknowledgment of the work they do. If you like someone's work, tell them. Don't pretend to be a tough boss. 
 
-When appreciating, try to appreciate the attitude than the achievement itself. For example, in our project, at the beginning our model was overfitting and we required more data. But, collecting MRI Scans from the ADNI website was not straight forward. The team actually spend a lot of time doing that tedious task. On each iteration, the model was fed more data. Slowly we tackled the overfitting issue. The team had collected almost 1500 patients data for improving the classifier. 
+When appreciating, try to appreciate the attitude than the achievement itself. For example, in our project, at the beginning our model was overfitting and we required more data. But, collecting MRI Scans from the ADNI website was not straight forward. The team actually spend a lot of time doing that tedious task. On each iteration, the model was fed with more data. Slowly we tackled the overfitting issue. The team had collected almost 1500 patients data for improving the classifier. 
 
-When the validation accuracy reached 90+ percentage accuracy, we have appreciated the tenacity of team members to bring in the data rather than the achievement of reaching 90+ percentage accuracy itself. Appreciating the attitude helps people to understand the productive traits in them and possibly nurture those values for future endeavors.  
+When the validation accuracy reached 90+ percentage, we have appreciated the tenacity of team members to bring in the data rather than the achievement of reaching 90+ percentage accuracy itself. Appreciating the attitude helps people to understand the productive traits in them and possibly nurture those values for future endeavors.  
 
 One more thing to be noted is overdoing appreciation. Appreciation should be earned. It can't be a Dopamine generating exercise. Once we have such an attitude, the trap of mediocre work can be shunned. A mentor should have an instinct to judge when to appreciate and when to push the mentees forward. 
 
