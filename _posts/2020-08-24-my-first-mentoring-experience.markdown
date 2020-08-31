@@ -131,5 +131,5 @@ There are no cardinal rules for mentoring. Rules changes with situations and men
 
 If you would like to take a deeper dive into our project, have a look at the following links.
 
-GitHub Repo: https://github.com/Lintaoommen/Alzheimers_Disease_Detection_Using_Deep_Learning
-Medium article: 
+GitHub Repo: https://bit.ly/3hEZnIO
+Medium article: https://bit.ly/2ENsoU7
