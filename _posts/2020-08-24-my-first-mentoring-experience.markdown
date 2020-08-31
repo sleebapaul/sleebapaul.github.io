@@ -16,96 +16,120 @@ category: blog
 author: sleebapaul
 description: What I learned from my first mentoring experience?
 mathjax: true
-hidden: true
+hidden: false
 ---
 
-On January first this year, Fabin Rasheed and I have launched [Auria Kathi, the AI Poet Artist living in the cloud](https://sleebapaul.github.io/auriakathi/){:target="_blank"}. Auria writes a poem, draw an image according to the poem, then color it with a random mood. All these creative actions are carried out without any human intervention.
+I've been part of multiple Machine Learning (ML) projects since 2015. The list includes open-source side projects, collaborated works like [Auria Kathi](https://sleebapaul.github.io/auriakathi/){:target="_blank"}, and projects at work. 
 
-Auria Kathi is an anagram for “AI Haiku Art”. Everything from her face to poems to art is artificially generated. We try to push the limits of generative art here. Auria is envisioned as a hub for artificial artistry. In the coming days, she will be creating more varieties of digital art. 
+But this year, I've unexpectedly bumped into a new role in my ML career. 
 
+> Mentoring a Deep Learning (DL) project. 
 
-## Social Media presence of Auria 
+I've helped people with their projects before as well. But oftentimes it is more or less like my opinion about someone's strategy to solve a problem using ML. Sometimes my inputs worked really well, sometimes it didn't. But this time things were a bit different. I've got to mentor a team throughout the journey of a DL project. 
 
-Auria has two social media handles to publish her work.
+This article is planned to describe what I've learned through the journey by citing some situations that happened in the project. That's how the reader would get an idea about both the project and mentoring. 
 
-- Instagram: [https://www.instagram.com/auriakathi/](https://www.instagram.com/auriakathi/){:target="_blank"}
-- Twitter: [https://twitter.com/AuriaKathi](https://twitter.com/AuriaKathi){:target="_blank"}
+The following inferences are not just about leading a Machine Learning project, rather it can be applied to mentoring in general. Thus, the writeup is not deeply technical. Just that, people who are familiar with DL will be able to relate the examples in a better way. 
+ 
+ 
+### Work with passionate people
 
-![image-center](../assets/auria_aml/auria_instagram.png){: .align-center}
+It is not the first time people have approached me for a mentor role. Most of the time what happens is, mentees, lose their interest in the project as time goes by, and eventually, it becomes a zombie project. Since I've had a couple of bad experiences of this nature, I usually try to get devoid of mentor roles as much as possible. 
 
-So far, Auria has gathered around 1300+ followers in these channels. The crowd includes artists, researchers, technologists, and policymakers. Throughout this year, Auria will be posting her work daily. 
+DL projects are so hyped nowadays, everyone wants a piece of it. But what these "AI Enthusiasts" don't understand is the elemental work of collecting, maintaining, and grooming the data is not so cool. It is a tedious job. 
 
-## Auria going Florence Biennale 2019
+When the team approached me last March, on the first call, I wanted the team to fix their data pipeline and get back to me. I didn't elaborate on anything about training models. 
 
-In October 2019, we are participating in the 12th edition of Florence Biennale to exhibit work of Auria under the contemporary digital art section. Being an international platform for Art, the presence of Auria's work produced by AI will be discussed in Florence Biennale with greater importance. Furthermore, how creative machines are going to build our future by inspiring artists to come up with novel ideas will also be a crucial part of the discussion. 
+This is a tactic I learned in a hard way. Because, time and time again, people just don't return once they are allotted with the primary but non-glamorous tasks. If they return, they are serious about what they are doing. 
 
-## Auria on news and publications 
+This initial examination makes mentoring remarkably serene. Because tedious works test people. It reveals who they are. Passionate people don't just give up. 
 
-Auria is featured in multiple technological as well as artistic international platforms. Some of them include, 
+> And guess what, this team had returned fixing their data pipeline. 
 
-1. [Creative Applications Network](https://www.creativeapplications.net/member-submissions/auria-kathi-an-ai-artist-living-in-the-cloud/){:target="_blank"}
+### Interruption is a tricky business
 
-2. [Coding Blues](https://codingblues.com/2019/01/11/fabin-sleeba-and-wonderful-auria/){:target="_blank"}
+I'm not a big fan of micromanagement as it shrinks the room for self-improvement and ownership. But the tricky question for a mentor is when to intervene? 
 
-3. [Creative AI Newsletter](https://us15.campaign-archive.com/?u=c7e080421931e2a646364e3ef&id=d1a15e8502){:target="_blank"}
+If you are interfering with a task too often, the mentees will feel that it is micromanagement. Same time, setting loose will not yield desirable results either. This is a balance every mentor should find his/her own. Of course, it depends on the mentees and the situations. But there should be a balance. 
 
-4. [Towards Datascience](https://towardsdatascience.com/auriakathi-596dfb8710d6){:target="_blank"}
+I'll give an example from the project. The project is an image classification task where image preprocessing is a requirement. My mentees were introduced to Python through DL. Sometimes, the lack of elemental programming knowledge in Python got them into trouble.
 
-## Lack of perfect algorithms
+I wanted them to solve these issues on their own. But the solutions they've found for the problems made things more convoluted. It brought in numerous tight couplings, external dependencies, and easily breakable patches. Fast forwarding a series of such "hot-fixes", codebase became a serious mess. A point came where they were not able to fix problems without breaking some other parts. Then I realized that I could've intervened a little bit early to guide them with better approaches. It was avoidable mayhem. 
 
-Considering the current state of art deep learning algorithms, we might not be able to come up with a single algorithm or network which can build an advanced application like Auria. But the components of Auria’s creative pursuit can be emulated using individual state of art algorithms. This vision settled upon choosing a pipeline architecture for Auria.
-
-## Engineering Architecture of Auria
-
-The engineering pipeline of Auria consists of mainly three components. 
-
-1. An LSTM based language model, trained on 3.5 million Haikus scraped from Reddit. The model is used to generate artificial poetry.
-
-2. A text to image network, called AttnGAN from Microsoft Research, which converts the generated Haiku to an abstract image.
-
-3. A photorealistic style transfer algorithm which selects a random style image from WikiArt dataset, and transfer color and brush strokes to the generated image. The WikiArt dataset is a collection of 4k+ curated artworks,  which are aggregated on the basis of emotions induced on human beings when the artwork is shown to them. 
-
-![image-center](../assets/auria_aml/auria_pipeline.png){: .align-center}
+Sure, they've learned a lot from those mistakes, but from a project perspective, a mentor should intervene periodically before things get too much tangled. Also, this is an academic project. A tight timelined industrial project can't afford such slow learning experiments. 
 
 
-## Challenges on pipelining different algorithms 
+### Judgments can go wrong
 
-Stacking individual state of the art algorithms helped us to build Auria, but the challenge of this approach was to link these components and work together in a common space. The potential problems we ran into are,
+When everything works as expected, there will be no questions asked. But when things go wrong, we will start questioning everything. At some point, when nothing works, we will even start doubting ourselves. 
 
-1. Modifying the official implementations of the research papers which are developed and tested in different environments, eg: Python versions. 
+This is a common phase in almost all projects. We have a plan to get it working, and the plan fails miserably in practice. 
 
-2. Some of the algorithms which use GPUs to train and test are tightly coupled with the CUDA versions.
+In our project, such an issue surfaced in the beginning. With limited computing resources, most of the teams will look into the Transfer Learning strategy when a new object detection or image classification problem pops up. We tried to do the same. 
 
-3. Each algorithm needs to be in a closed container so that it can be represented in a common production platform without disrupting the other environments.
+Using a MobileNet architecture pre-trained in the Imagenet dataset, we changed the output layer and performed Transfer Learning. The results were pathetic. We tuned the hyperparameters, added more data ... but no luck. 
 
-4. The data flow between the components should be fluid. 
+It was a testing moment for me as a mentor. From my experience, Transfer Learning is a reasonable method in such applications. My mentees were equally confused and looked at me for a resolution. I've had to find a valid reason why the approach didn't work. Then I dug deep into the problem. The findings were, 
 
-5. Deep Learning algorithms demands high computation gear. Along with isolation in steps, we required powerful computation resources like GPUs in each step.
+1. The input data is not just images but 3D MRI scans of the brain. These scans are gone through a multi-level preprocessing and finally, the grayscale 2D image is created.
 
-6. Deploying Auria as a web application for people to come and experience her creative pursuit considering the diverse development settings. 
+2. [Transfer learning from ImageNet models to large medical images has been very poor. We lose too much information going from high-resolution grayscale to low-resolution RGB which is required input for MobileNet pre-trained in ImageNet.](https://forums.fast.ai/t/transfer-learning-for-medical-radiography/4931/9){:target="_blank"}
 
-## [Microsoft Azure Machine Learning Pipelines (AML Pipelines)](https://docs.microsoft.com/en-us/azure/machine-learning/service/concept-ml-pipelines){:target="_blank"}
+This finding changed the whole strategy of the project. We've moved to a small network which could be trained with the limited computation facility we've, still gives great results. 
 
-Machine learning workflow is a pipeline process which includes preparing the data, build, train and tune models, then deploy the best model to production to get the predictions. [Azure Machine Learning pipelines](https://docs.microsoft.com/en-us/azure/machine-learning/service/concept-ml-pipelines){:target="_blank"} redefine machine learning workflows that can be used as a template for machine learning scenarios.
+So, it's okay to be wrong. You're the mentor, not omnipotent. When things go wrong, accept it with an open mind, find what is going wrong, and adapt. Don't take the failures personally. If you do, then you'll find reasons to blame someone else or yourself and eventually become hopeless. Rather, find surprises as an opportunity to grow. 
 
-We’ve adapted this conception of AML pipelines to create an advanced application like Auria.  The conversion to the platform was not difficult since the basic building blocks of AML pipelines are designed with a great envision to build scaled applications. 
+> Sounds a bit dramatic, but it is a fact. 
 
-## Why AML Pipelines for Auria?
+### Stick with the success of the project 
 
-1. The most popular programming language in the Machine Learning realm is Python. AML Pipelines has the Python 3 SDK, we were not worried about moving the existing stack to the platform. All three algorithms we use for Auria are implemented in Python and we could replicate the results using the SDK without any hassle. 
+You can't get away from the ideological disputes if you are actively involved in a project. Sometimes, people will disagree to agree. And it is okay. You're the mentor doesn't mean that you are right about everything. 
 
-2. In Auria’s pipeline, we have models trained by ourselves as well as the models which use the pre-trained weights. The development environments of these algorithms were distinctive, we needed strict isolation at each step of the pipeline. Thanks to the platform, each step in an AML pipeline is a dockerized container. It helps to build individual steps without disturbing the setting of others. All the dockerized steps are portable, we could reuse these components for multiple experiments. 
+> Don't be a gatekeeper. 
 
-3. Each step has to provision to attach a compute engine, which can be CPU or GPU as per the need. We’ve used powerful GPU instances for quick training and tuning the hyperparameters of our models. Distributed computation facility is also available in the platform for creating parallelizing the heavy computation needs. 
-4. For our style transfer algorithm, the CUDA dependency was strict. It was not matching the default docker environment of the platform. Thankfully, Azure Machine Learning platform allows adding custom docker containers rather than using default containers for every application. This feature gives absolute freedom for recreating almost any configurations in AML Pipelines. 
+Don't let your ego affect the success of the project. As a mentor, your priority is the completion of the project. It is not about a one-man show of all your ideas and knowledge. You're a hero, if and only if the project is a success. Otherwise, it is just a tool for feeding your ego. Don't be that guy who stops co-operating as his/her ego is hurt. 
 
-5. Deploying Auria to experience her creative process is something we are currently working on. AML Pipeline deployment helps to bypass the time to be spent on building the backend APIs. Deployment readily provides REST endpoints to the pipeline output, which can be consumed as per convenience. 
+### Be empathetic and patient
 
+As a mentor, you'll be more exposed to the technology stack and best practices than your mentees. But people forget this fact at times.  Your mentees don't have the expertise you've. If they do, they won't be needing you as a mentor. Always keep this in mind. 
 
-Auria is a perfect use-case of Azure Machine learning pipelines considering the above perks we enjoyed while using this platform. On further collaboration with Microsoft Azure ML team, we are planning to scale up Auria by strengthening her creative pipeline with more advanced algorithms, creating an interactive experience for her followers by deploying her online and try new varieties of artificially generated digital art content.
+Expect mistakes from the team. Things that look stupid for you may not be alarming for them. So, when they make mistakes, be empathetic. Help them correct it iteratively. But never allow the same mistake to happen twice. 
 
-```
-Thanks, Microsoft for AML Pipelines ❤️
-Love,
-Auria 😉 
-```
+Also, avoid shouting as much as possible. Not only that it doesn't solve the issue, no one goes home happy after a callous conversation. 
+
+> And have patience. Good things will take time. 
+
+During the project, I've lost my cool once and it was about documenting the results properly. The team rectified it immediately and it was in a better format.  But when I think about the incident now, I feel that I could've handled the situation much better. 
+
+### Set templates
+
+This is the best thing you can do as a mentor. Roll up your sleeves and set a basic infrastructure for your mentees. This approach helps them in multiple ways.
+
+1. The mentees will have a lookup to refer to and start with. Most of the time, starting right is the biggest challenge for a noobie. 
+
+2. On setting up a template, you've control over what you're expecting. You can easily detect if mentees derail far from the original architecture and bring them back. 
+
+3. Implicitly, you will help the mentees to understand why you've chosen such an architecture and how it is going to help them while doing the project. On the next project, they are more likely to apply these best practices and infrastructure as they've already tasted the fruit of it. 
+
+For this project, we had to do error analysis, try different datasets, do hyperparameter tuning,  and explore different network architectures. So I've set them a template that contains modules that can be easily reused for various experiments. I've convinced the team about the plug and play feature of these modules and encouraged them to write code in a modular manner with minimum external dependencies and coupling. It helped to do faster experiments without breaking anything else. Now they are more likely to reuse that design paradigm in their future projects since they already know why such an approach was taken. 
+
+Furthermore, I've introduced them to version control, better coding practices, and documentation tricks. Once the project got over, they were familiarised with a lot of topics other than Deep Learning.
+
+### Give appreciation. Period. 
+
+People love getting an acknowledgment of the work they do. If you like someone's work, tell them. Don't pretend to be a tough boss. 
+
+When appreciating, try to appreciate the attitude than the achievement itself. For example, in our project, at the beginning our model was overfitting and we required more data. But, collecting MRI Scans from the ADNI website was not straight forward. The team actually spend a lot of time doing that tedious task. On each iteration, the model was fed more data. Slowly we tackled the overfitting issue. The team had collected almost 1500 patients data for improving the classifier. 
+
+When the validation accuracy reached 90+ percentage accuracy, we have appreciated the tenacity of team members to bring in the data rather than the achievement of reaching 90+ percentage accuracy itself. Appreciating the attitude helps people to understand the productive traits in them and possibly nurture those values for future endeavors.  
+
+One more thing to be noted is overdoing appreciation. Appreciation should be earned. It can't be a Dopamine generating exercise. Once we have such an attitude, the trap of mediocre work can be shunned. A mentor should have an instinct to judge when to appreciate and when to push the mentees forward. 
+
+## Final Thoughts
+
+There are no cardinal rules for mentoring. Rules changes with situations and mentees. But there are some core values that can ease the process. I hope you may reflect on my findings, and let me know yours. 
+
+If you would like to take a deeper dive into our project, have a look at the following links.
+
+GitHub Repo: https://github.com/Lintaoommen/Alzheimers_Disease_Detection_Using_Deep_Learning
+Medium article: 
