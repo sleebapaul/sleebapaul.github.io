@@ -187,9 +187,7 @@ In this post, I'm planning a neuron level explanation of an RNN cell. To start w
 
 Let's begin with $h^{[t-1]}$, the hidden state input from previous RNN cell to current cell (Refer the diagram above).  
 
-- $$
-h^{[t]}\ =\ F(W_{hh} \cdot h^{[t-1]}\ +\ W_{xh} \cdot x^{[t]} + b_h)
-$$
+- $h^{[t]}\ =\ F(W_{hh} \cdot h^{[t-1]}\ +\ W_{xh} \cdot x^{[t]} + b_h)$
 
 
 A hidden state? 🤷 Why we need a state now? We never had a state vector for CNNs. Why now? 
@@ -208,9 +206,7 @@ $W_{hh}$ will learn what needs to remember or forget from past $h^{[t-1]}$. $W_{
  
 Let's go to the next equation for the first application. 
 
-- $$
-y^{[t]}\ =\ W_{hy} \cdot h^{[t]}\ +\ b_y
-$$
+- $y^{[t]}\ =\ W_{hy} \cdot h^{[t]}\ +\ b_y$
 
 We're generating an immediate output $y^{[t]}$ using the current context $h^{[t]}$ where $W_{hy}$ learns about creating an output from current context. Note that, this is a completely optional decision and depends on the application. The model we are discussing now is `(Many to Many Synced)` rightmost model, ideal for language modeling.  
 
@@ -226,9 +222,7 @@ It is simply because we are dealing with a continuous stream of text. The previo
 
 Again, this is not the universal network architecture. There are variations like [teacher forcing](https://cedar.buffalo.edu/~srihari/CSE676/10.2.1%20TeacherForcing.pdf){:target="_blank"}, which don't follow this pattern. On that note, let's move to the third equation. 
 
-- $$
-o^{[t]}\ =\ softmax(y^{[t]})
-$$
+- $o^{[t]}\ =\ softmax(y^{[t]})$
 
 The third equation is not really a part of the architecture. The `softmax` layer will convert the output of RNN into a probability distribution. In language modeling, it will be a distribution with a population of dictionary size. An ideal network will predict the maximum probability for that word or character which is most likely to come next, considering the past context.  
 
@@ -249,9 +243,7 @@ We've seen the insanely intuitive equations on an RNN cell. But let me unveil th
 
 Let's go back to equation 1. Consider non-linearity $F$ as `tanh`. 
 
-- $$
-h^{[t]}\ =\ tanh(W_{hh} \cdot h^{[t-1]}\ +\ W_{xh} \cdot x^{[t]} + b_h)
-$$
+- $h^{[t]}\ =\ tanh(W_{hh} \cdot h^{[t-1]}\ +\ W_{xh} \cdot x^{[t]} + b_h)$
 
 Let's break this equation down, 
 
@@ -353,20 +345,16 @@ Training RNNs is not a piece of cake. The villain is the very concept of using R
 
 As I mentioned above, we predict at each every cell. This prediction is compared with the original label. A loss is created here. Usual stuff, isn't it? But this story is for a time step. What if we've such `t` steps?  Let's take 3-time steps as above.
 
-$$Loss,\ L\ =\ L_{1}\ +\ L_{2}\ +\ L_{3}$$
+$Loss,\ L\ =\ L_{1}\ +\ L_{2}\ +\ L_{3}$
 
 The worry begins here. In RNNs, since the parameters are shared, if we need to find a gradient at a time step, then we need to sum up all the gradients from all past time steps. 
 
 Let's bring back equations of RNN cells. For simplicity I'm naming $W_{hh}$ as $W$, $W_{xh}$ as $V$ and $W_{xy}$ as $U$.
 
-- $$
-h^{[t]}\ =\ F(W \cdot h^{[t-1]}\ +\ V \cdot x^{[t]} + b_h)
-$$  
+- $h^{[t]}\ =\ F(W \cdot h^{[t-1]}\ +\ V \cdot x^{[t]} + b_h)$ 
 
 
-- $$
-y^{[t]}\ =\ U \cdot h^{[t]}\ +\ b_y
-$$
+- $y^{[t]}\ =\ U \cdot h^{[t]}\ +\ b_y$
 
 Here we need to calculate six gradients of loss with respect to learnable parameters. They are, 
 
@@ -374,32 +362,32 @@ $\frac{\partial L}{\partial U}$,  $\frac{\partial L}{\partial V}$, $\frac{\parti
 
 Consider the $\frac{\partial L}{\partial U}$ first. Let the number of time steps be $T$. 
 
-$$\frac{\partial L}{\partial U}\ = \sum_{t=1}^{T} \frac{\partial L_t}{\partial U}$$  
+$\frac{\partial L}{\partial U}\ = \sum_{t=1}^{T} \frac{\partial L_t}{\partial U}$
 
 By chain rule, 
 
-$$\frac{\partial L_t}{\partial U}\ =\ \frac{\partial L_t}{\partial y^{[t]}}\ *\ \frac{\partial y^{[t]}}{\partial U}$$
+$\frac{\partial L_t}{\partial U}\ =\ \frac{\partial L_t}{\partial y^{[t]}}\ *\ \frac{\partial y^{[t]}}{\partial U}$
 
 $\frac{\partial y^{[t]}}{\partial U}$ can be easily found out using our second equation. We're good since there is only one dependency for $U$ in it. This is for a single layer. You may need to traverse through layers if multiple layers are involved 😊 
 
 Now, let's calculate $\frac{\partial L}{\partial W}$. 
 
-$$\frac{\partial L}{\partial W}\ =\ \sum_{t=1}^{T} \frac{\partial L_t}{\partial W}$$  
+$\frac{\partial L}{\partial W}\ =\ \sum_{t=1}^{T} \frac{\partial L_t}{\partial W}$
 
 Using chain rule,  
 
-$$\frac{\partial L_t}{\partial W}\ =\ \frac{\partial L_t}{\partial y^{[t]}}\ *\ \frac{\partial y^{[t]}}{\partial h^{[t]}}\ *\ \frac{\partial h^{[t]}}{\partial W}$$ 
+$\frac{\partial L_t}{\partial W}\ =\ \frac{\partial L_t}{\partial y^{[t]}}\ *\ \frac{\partial y^{[t]}}{\partial h^{[t]}}\ *\ \frac{\partial h^{[t]}}{\partial W}$
 
 Easy? Nope. This interpretation is wrong. Because not just $h^{[t]}$, but the whole $h^{[t]}$, $h^{[t-1]}$, ... $h^{[0]}$ depends on $W$. So gradients can't be calculated using just chain rule, we need to go for a total derivative.  A big thanks to parameter sharing 😏   
 
 So what is the right equation?   
 
 
-$$\frac{\partial L_t}{\partial W}\ =\ \frac{\partial L_t}{\partial y^{[t]}}\ *\ \frac{\partial y^{[t]}}{\partial h^{[t]}}\ *\ \sum_{k=0}^{t}\Bigg(\prod_{i=k+1}^{t} \frac{\partial h^{[i]}}{\partial h^{[i-1]}}\Bigg)\ *\ \frac{\partial h^{[k]}}{\partial W}$$
+$\frac{\partial L_t}{\partial W}\ =\ \frac{\partial L_t}{\partial y^{[t]}}\ *\ \frac{\partial y^{[t]}}{\partial h^{[t]}}\ *\ \sum_{k=0}^{t}\Bigg(\prod_{i=k+1}^{t} \frac{\partial h^{[i]}}{\partial h^{[i-1]}}\Bigg)\ *\ \frac{\partial h^{[k]}}{\partial W}$
 
 Same goes for bias $b_h$  
 
-$$\frac{\partial L_t}{\partial b_h}\ =\ \frac{\partial L_t}{\partial y^{[t]}}\ *\ \frac{\partial y^{[t]}}{\partial h^{[t]}}\ *\ \sum_{k=0}^{t}\Bigg(\prod_{i=k+1}^{t} \frac{\partial h^{[i]}}{\partial h^{[i-1]}}\Bigg)\ *\ \frac{\partial h^{[k]}}{\partial b_h}$$
+$\frac{\partial L_t}{\partial b_h}\ =\ \frac{\partial L_t}{\partial y^{[t]}}\ *\ \frac{\partial y^{[t]}}{\partial h^{[t]}}\ *\ \sum_{k=0}^{t}\Bigg(\prod_{i=k+1}^{t} \frac{\partial h^{[i]}}{\partial h^{[i-1]}}\Bigg)\ *\ \frac{\partial h^{[k]}}{\partial b_h}$
 
 
 $\frac{\partial L}{\partial V}$ and $\frac{\partial L}{\partial b_x}$ will be having similar equations. 
